@@ -7,7 +7,7 @@ const knex = require("knex")({
   connection: {
     host: 'nassydev.synology.me',
     user: 'kyle',
-    password: 'Kyleisnowanerd1!',
+    password: process.env.DB_PASSWORD,
     database:'api-express-database',
     timezone: 'utc',
   },
