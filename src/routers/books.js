@@ -38,7 +38,7 @@ VALUES (?, ?, ?, ?, ?, ?);
 `, [req.body.title, req.body.type, req.body.author, req.body.topic, req.body.publication_date, req.body.pages])
     console.log("test", update.insertId)
 const response = await db.query("select * FROM books WHERE id = ? ", [update.insertId])
-    res.json({books: response})
+    res.status(201).json({books: response})
 })
 
 module.exports = router
